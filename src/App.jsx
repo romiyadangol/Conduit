@@ -1,4 +1,3 @@
-import Nav from './components/Nav';
 import Banner from './components/Banner';
 import Container from './components/Container';
 
@@ -8,7 +7,6 @@ function App() {
 
   return (
     <>
-    <Nav />
     <Banner 
     title="conduit"
     label="A place to share your knowledge."/>

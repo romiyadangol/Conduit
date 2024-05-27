@@ -47,6 +47,15 @@ function App() {
                 <p>{article.description}</p>
               </div>
               
+              <div className="article-bottom">
+                <span>Read more...</span>
+
+                <div className="article-tags">
+                  {article.tagList.map((tag, index) => (
+                    <span key={index} className="tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
             </div>
             )
           })}
@@ -55,12 +64,16 @@ function App() {
           <div className="popular-tags">
             <p>Popular Tags</p>
             <div className="tag-list">
-              {articles.map((article) => (
-                article.tagList.map((tag, index) => (
-                  <span key={index} className="tag">{tag}</span>
-                ))
-              ))}
-
+              <a href="">eos</a>
+              <a href="">est</a>
+              <a href="">ipsum</a>
+              <a href="">enim</a>
+              <a href="">repellat</a>
+              <a href="">quia</a>
+              <a href="">consequatur</a>
+              <a href="">facilis</a>
+              <a href="">exercitationeum</a>
+              <a href="">tenetur</a>
             </div>
           </div>
         </div>
