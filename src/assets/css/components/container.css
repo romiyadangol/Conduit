@@ -1,3 +1,8 @@
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
   .container-page {
       display: flex;
       flex-direction: column;
@@ -111,7 +116,9 @@
     color: #bbb;
     margin: 0;
   }
-  
+  .article-content{
+    text-decoration: none;
+  }
   .article-content h2 {
     font-family: "Titillium Web", sans-serif;
     font-size: 1.5rem;
@@ -130,15 +137,20 @@
  
   
   .article-favorite button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    gap: 3px;
+  }
+  .heart-btn{
     border: 1px solid #5CB85C;
     border-radius: 0.2rem;
-    padding: 0.25rem 0.5rem;
     background: none;
     color: #5CB85C;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 3px;
+    width: 50px;
+    padding: 0.2rem 0.2rem;
   }
   .article-favorite button:hover {
     background-color: #5CB85C;
@@ -177,21 +189,29 @@
   }
   
   .popular-tags {
-    background-color: #fff;
+    background-color: #f0eeee;
     padding: 1rem;
-    border-radius: 4px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   }
   
   .popular-tags p {
-    margin: 0 0 1rem;
-    font-weight: 700;
-    color: #333;
+    font-family: "Titillium Web", sans-serif;
+    font-weight: 500;
+    color: #504f4f;
   }
   
-  .tag-list {
-    display: flex;
-    flex-wrap: wrap;
+  .tag-list a {
+    display: inline-block;
+    background-color: #818a91;
+    color: white;
+    border-radius: 20px;
+    padding: 3px 5px;
+    margin: 2px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: "Titillium Web", sans-serif;
+
   }
   
   .tag {

@@ -5,6 +5,8 @@ import App from './App.jsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import SignIn from './components/SignIn.jsx'
 import Nav from './components/Nav.jsx'
+import SignUp from './components/SignUp.jsx'
+import ArticleDetail from './components/Article.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -12,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       {
         path: '/',
         element: <Nav/>,
+        
         children: [
           {
             path: '/',
@@ -20,6 +23,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           {
             path: '/signIn',
             element: <SignIn/>
+          },
+          {
+            path: '/signUp',
+            element: <SignUp/>
+          },
+          {
+            path: '/article/:slug',
+            element: <ArticleDetail/>
           }
 
 
