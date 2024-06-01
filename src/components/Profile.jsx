@@ -1,50 +1,41 @@
-// import { useEffect, useState } from 'react';
-// import { Outlet, useParams } from 'react-router-dom';
-// export default function Profile() {
-//     const { title } = useParams();
-//     const [profile, setProfile] = useState(null);
-
-//     useEffect(() => {
-//         fetch(`https://api.realworld.io/api/articles/${title}`)
-//             .then((response) => response.json())
-//             .then((data) => {
-//                 setProfile(data.profile);
-//             });
-//     }, [title]);
-
-//     if(!profile){
-//         return <div>Loading...</div>
-//     }
-//     return(
-//         <>
-//         <div className="profile-info">
-//             <Outlet/>
-//             {/* <h1>{profile.title}</h1>
-//             <p>{profile.description}</p> */}
-//         </div>
-//         </>
-//     );
-// }
-
-// src/components/Profile.js
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Article from './Article';
+import '../assets/css/components/profile.css';
 import '../assets/css/components/container.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function Profile() {
-  const { title } = useParams();
-  const [articles, setArticles] = useState([]);
-
+  const { title } = useParams(); 
+  const [profile, setProfile] = useState(null); 
+  const [articles, setArticles] = useState([]); 
   useEffect(() => {
     fetch(`https://api.realworld.io/api/articles?author=${title}`)
-      .then((response) => response.json())
+      .then((response) => response.json()) 
       .then((data) => {
-        setArticles(data.articles);
+          setProfile(data.articles[0].author); 
+          setArticles(data.articles);
       });
-  }, [title]);
+  }, [title]); 
 
+  if (!profile) {
+    return <div>Loading...</div>;
+  }
   return (
+    <>
+    <div className="bio">
+        <div className="image">
+        {profile.image && <img src={profile.image} alt={profile.username} className="profile-image" />}
+        <h1>{profile.username}</h1>
+        </div>
+        <div className="follow">
+        <button className="follow-button">
+        <FontAwesomeIcon icon={faPlus} style={{ marginRight: '5px' }} />
+            Follow {title}</button>
+        </div>
+    </div>
     <div className="container-page">
       <div className="page">
         <div className="left-page">
@@ -57,5 +48,6 @@ export default function Profile() {
         </div>
       </div>
     </div>
+    </>
   );
 }
