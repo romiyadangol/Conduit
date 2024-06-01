@@ -7,6 +7,7 @@ import SignIn from './components/SignIn.jsx'
 import Nav from './components/Nav.jsx'
 import SignUp from './components/SignUp.jsx'
 import ArticleDetail from './components/Article.jsx'
+import Profile from './components/Profile.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -31,6 +32,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           {
             path: '/article/:slug',
             element: <ArticleDetail/>
+          },
+          {
+            path: '/profile/:title',
+            element: <Profile/>
           }
 
 

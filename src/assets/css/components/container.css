@@ -129,7 +129,7 @@
   
   .article-content p {
     font-family: "Titillium Web", sans-serif;
-    color: #c0baba;
+    color: #969595;
     font-size: 1rem;
     font-weight: 300;
     cursor: pointer;
@@ -189,9 +189,10 @@
   }
   
   .popular-tags {
-    background-color: #f0eeee;
+    background-color: #f4f4f4;
     padding: 1rem;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); */
+    border-radius: 4px;
   }
   
   .popular-tags p {

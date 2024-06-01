@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import '../assets/css/components/container.css';
 import { Link } from 'react-router-dom';
+import Article from './Article';
+import '../assets/css/components/container.css';
 
-function App() {
+function Container() {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -22,43 +21,9 @@ function App() {
           <div className="toggle">
             <h2>Global Feed</h2>
           </div>
-          {articles.map((article, index) => {
-            return (
-              <div className="article" key={index}>
-                <div className="article-head">
-                  <div className="article-info">
-                    <div className="article-avatar">
-                      <img src={article.author.image} />
-                    </div>
-                    <div className="article-details">
-                      <h1>{article.author.username}</h1>
-                      <p>{new Date(article.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-                    </div>
-                  </div>
-                  <div className="article-favorite">
-                    <button className="heart-btn">
-                      <FontAwesomeIcon icon={faHeart} />
-                      {article.favoritesCount}
-                    </button>
-                  </div>
-                </div>
-
-                <Link to={`/article/${article.slug}`} className="article-content">
-                  <h2>{article.title}</h2>
-                  <p>{article.description}</p>
-                </Link>
-
-                <div className="article-bottom">
-                  <span>Read more...</span>
-                  <div className="article-tags">
-                    {article.tagList.map((tag, index) => (
-                      <span key={index} className="tag">{tag}</span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            );
-          })}
+          {articles.map((article, index) => (
+            <Article key={index} article={article} />
+          ))}
         </div>
         <div className="right-page">
           <div className="popular-tags">
@@ -82,4 +47,4 @@ function App() {
   );
 }
 
-export default App;
+export default Container;
