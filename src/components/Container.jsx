@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Article from './Article';
 import '../assets/css/components/container.css';
 
@@ -25,7 +25,7 @@ function Container() {
             <Article key={index} article={article} />
           ))}
         </div>
-        <div className="right-page">
+        {/* <div className="right-page">
           <div className="popular-tags">
             <p>Popular Tags</p>
             <div className="tag-list">
@@ -41,7 +41,7 @@ function Container() {
               <Link to="/">tenetur</Link>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

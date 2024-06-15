@@ -24,7 +24,7 @@ function Article({ article }) {
           </button>
         </div>
       </div>
-      <Link to={`/article/${article.slug}`} className="article-content">
+      <Link to={`/articleDetail/${article.slug}`} className="article-content">
         <h2>{article.title}</h2>
         <p>{article.description}</p>
       </Link>

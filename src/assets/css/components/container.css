@@ -1,114 +1,113 @@
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-page {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 10rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 992px) {
   .container-page {
-      display: flex;
-      flex-direction: column;
-      padding: 3rem 10rem;
-      align-items: center;
+      padding: 2rem;
   }
-  @media screen and (max-width: 992px) {
-      .container-page {
-        padding: 2rem;
-      }
-  }
-    
+}
+
+.page {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media (max-width: 768px) {
   .page {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-  }
-  @media (max-width: 768px) {
-    .page {
       flex-direction: column;
       align-items: center;
-    }
   }
+}
 
-  .left-page {
-    flex: 3;
-    width: 100%;
-  }
-  @media (min-width: 768px) {
-    .left-page {
-      flex: 3;
-      max-width: 75%;
-    }
-  }
+.left-page {
+  flex: 3; 
+  max-width: 75%;
+  width: 100%;
+}
 
-  .right-page {
-    flex: 1;
-    margin-left: 2rem;
-    width: 100%;
-  }
-  @media (min-width: 768px) {
-    .right-page {
-      max-width: 25%;
-    }
-  }
+.right-page {
+  flex: 1; 
+  max-width: 25%;
+  width: 100%;
+  margin-left: 2rem;
+}
 
-  .toggle {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
+@media (max-width: 768px) {
+  .left-page, .right-page {
+      max-width: 100%;
+      margin-left: 0;
   }
-    
-  .toggle h2 {
-    font-size: 1.1rem;
-    font-weight: 400;
-    font-family: "Titillium Web", sans-serif;
-    color: #5CB85C;
-    position: relative;
-  }
-  .toggle h2::after{
-    content: '';
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: #5CB85C;
-    position: absolute;
-    left: 0;
-    bottom: -17px;
-  }
+}
 
-  .popular-tags {
-    background-color: #f4f4f4;
-    padding: 1rem;
-    /* box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); */
-    border-radius: 4px;
-  }
-  
-  .popular-tags p {
-    font-family: "Titillium Web", sans-serif;
-    font-weight: 500;
-    color: #504f4f;
-  }
-  
-  .tag-list a {
-    display: inline-block;
-    background-color: #818a91;
-    color: white;
-    border-radius: 20px;
-    padding: 3px 5px;
-    margin: 2px;
-    text-decoration: none;
-    font-size: 12px;
-    font-weight: 500;
-    font-family: "Titillium Web", sans-serif;
+.toggle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
 
-  }
-  
-  .tag {
-    background-color: #efefef;
-    border-radius: 3px;
-    padding: 0.5rem;
-    margin-right: 0.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.8rem;
-    color: #555;
-  }
-  
+.toggle h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  font-family: "Titillium Web", sans-serif;
+  color: #5CB85C;
+  position: relative;
+}
+
+.toggle h2::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #5CB85C;
+  position: absolute;
+  left: 0;
+  bottom: -17px;
+}
+
+.popular-tags {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.popular-tags p {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 500;
+  color: #504f4f;
+}
+
+.tag-list a {
+  display: inline-block;
+  background-color: #818a91;
+  color: white;
+  border-radius: 20px;
+  padding: 3px 5px;
+  margin: 2px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.tag {
+  background-color: #efefef;
+  border-radius: 3px;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  color: #555;
+}

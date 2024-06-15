@@ -6,7 +6,7 @@ export default function Nav() {
         <>
             <div className="navbar">
                 <div className="header">
-                    <h1>conduit</h1>
+                    <h1><Link className='nav-head' to="/">Conduit</Link></h1>
                 </div>
                 <nav>
                     <ul>
